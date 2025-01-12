@@ -1,0 +1,23 @@
+@import url(../../App.css);
+
+.hero-section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1{
+    font-family: var(--logo-font-family);
+    font-weight: bolder;
+    font-size: 3.5rem;
+}
+
+.app-working-instruction{
+    font-family: var(--site-font-family);
+}
+
+.app-working-instruction span{
+    font-family: var(--logo-font-family);
+    font-weight: bold;
+}

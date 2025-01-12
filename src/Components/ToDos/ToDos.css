@@ -1,0 +1,35 @@
+@import url(../../App.css);
+
+.btn{
+    padding: 5px 15px;
+}
+
+.btn-add{
+    background-color: var(--back-ground-color3);
+    color: whitesmoke;
+    border: 0;
+}
+
+.btn-add:hover{
+    /* opacity: 0.9 !important; */
+    /* background-color: ; */
+    background-color: var(--hover-color) !important;
+    color: whitesmoke;
+}
+
+.btn-add:active{
+    background-color: var(--back-ground-color2) !important;
+    color: black;
+}
+
+.card-title{
+    font-family: 'Rubik';
+}
+
+.card-text{
+    font-family: 'Rubik';
+}
+
+.form-control{
+    background-color: rgb(241, 241, 241);
+}

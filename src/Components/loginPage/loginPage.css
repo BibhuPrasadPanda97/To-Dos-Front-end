@@ -1,0 +1,49 @@
+@import url(../../App.css);
+
+.login-box{
+    padding: 5px 0;
+}
+
+.login-box input{
+    outline-color: #43ff00ad;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    border: 0px !important;
+}
+
+.input-mandatory{
+    outline-color: rgb(145, 1, 1);
+    border: 1px solid rgb(145, 1, 1) !important;
+    /* outline-color: red;
+    border: 1px solid red !important; */
+}
+
+/* input[type=email]{
+    outline-color: rgb(145, 1, 1);
+    border: 1px solid rgb(145, 1, 1) !important;
+    outline-color: red;
+    border: 1px solid red !important;
+} */
+
+.btn-login{
+    font-family: var(--logo-font-family);
+    font-size: 14px !important;
+    font-weight: bold;
+    background-color: var(--back-ground-color1);
+    border: 0px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    /* line-height: inherit; */
+    text-decoration: none;
+    color: black;
+}
+
+.btn-login:hover{
+    scale: 1.10;
+}
+
+.btn-login a {
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,20 @@
+@import url(../../App.css);
+
+.signup-section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disable-signup{
+    pointer-events: none;
+    background-color: lightgray;
+}
+
+.circle-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+}

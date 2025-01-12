@@ -1,24 +1,58 @@
-import logo from './logo.svg';
+import { useEffect, useState } from "react";
 import './App.css';
+import LoginPage from "./Components/loginPage/LoginPage.jsx";
+import TopNav from "./Components/TopNav/TopNav.jsx";
+import Home from "./Components/Home/Home.jsx";
+import ToDos from "./Components/ToDos/ToDos.jsx";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router";
+import SignUpPage from "./Components/signupPage/SignUpPage.jsx";
 
 function App() {
+  // let loginSignUpPath = '';
+  const [currentPage, setCurrentPage] = useState({
+    loginPage: false,
+    vistorPage: false,
+    loginSignUpPath: '',
+    toggle: true
+  });
+
+  // React Routers to be implemented
+  useEffect(() => {
+    setCurrentPage({
+      loginSignUpPath: window.location.pathname !== "/" ? window.location.pathname.split('/')[1] : ''
+    })
+    console.log(`login path: ${currentPage.loginSignUpPath}`);
+  }, [currentPage.toggle]);
+
+  const onCancelClick = () => {
+    setCurrentPage({
+      toggle: !currentPage.toggle
+    });
+  }
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        {/* Landing Page */}
+        <TopNav pathName={currentPage.loginSignUpPath} />
+        <Routes path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage onCancelClick={onCancelClick} />} />
+          {/* TODos page */}
+          <Route path="/todos" element={<ToDos />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
+
+function Layout() {
+  return (
+    <>
+      <Outlet />  {/* Where nested routes will render */}
+    </>
   );
 }
 
